@@ -1,0 +1,29 @@
+package com.cg.datalayer;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import com.cg.employeeinterface.Employee;
+
+public class EmployeeDao {
+
+	Employee employee = new Employee();
+	Set<Employee> list = new HashSet<>();
+
+	public void addEmployee(Employee emp) {
+		list.add(emp);
+	}
+
+	public void deleteEmp(String empName) {
+		//list.removeIf();
+	}
+
+	public void viewAllEmployee() {
+		list.iterator();
+	}
+
+	public void getEmpById() {
+		//list.contains(null);
+	}
+
+}

@@ -1,0 +1,30 @@
+package com.cg.ui;
+
+import java.util.Scanner;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.cg.controllerclass.AppController;
+import com.cg.employeeinterface.Employee;
+import com.cg.servicelayer.EmployeeService;
+
+public class UiClass {
+	int ch=0;
+	private AppController appController;
+
+	ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+	
+	Scanner scanner = new Scanner(System.in);
+	ch = scanner.nextInt();
+	
+	
+	public void acceptData() {
+		//appController.addEmployee();
+	}
+
+	public void displayData() {
+
+	}
+
+}

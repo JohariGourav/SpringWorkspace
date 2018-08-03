@@ -1,0 +1,35 @@
+package com.cg.ui;
+
+import java.util.Scanner;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.cg.controllerclass.AppController;
+import com.cg.employeeinterface.Employee;
+import com.cg.servicelayer.EmployeeService;
+
+public class UiClass {
+	
+	private AppController appController;
+	
+	ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+	
+	
+	Scanner scanner = new Scanner(System.in);
+	int ch = scanner.nextInt();
+	
+		switch(ch) {
+		case 1: System.out.println("jhgbhsdf");
+			break;
+				
+		
+		default: System.out.println("invalid");
+			break;
+		}
+
+	
+	
+
+
+}

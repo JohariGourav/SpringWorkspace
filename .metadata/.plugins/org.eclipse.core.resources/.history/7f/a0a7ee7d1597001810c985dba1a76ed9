@@ -1,0 +1,13 @@
+package com.cg.ui;
+
+public class UiClass {
+	
+	public void acceptData() {
+		
+	}
+	
+	public void displayData() {
+		
+	}
+	
+}

@@ -1,0 +1,5 @@
+package com.cg.employeedao;
+
+public class EmployeeDao {
+
+}

@@ -1,0 +1,22 @@
+package com.cg.main;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+
+import com.cg.ui.UiClass;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+		//UiClass ui = new UiClass();
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+		UiClass ui  = (UiClass) context.getBean("ui");
+		
+		ui.acceptdata();
+		
+	}
+
+}
