@@ -6,6 +6,11 @@ public class Employee {
 	private String name;
 	private int salary;
 	
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
+	}
+
 	//Getters Setters
 	public int getId() {
 		return id;

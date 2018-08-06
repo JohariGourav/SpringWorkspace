@@ -12,7 +12,7 @@ import com.cg.servicelayer.EmployeeService;
 public class UiClass {
 
 	private AppController appController = new AppController();
-	Employee employee = new Employee();
+	Employee employee;
 
 	// ApplicationContext context = new
 	// ClassPathXmlApplicationContext("context.xml");
@@ -48,10 +48,30 @@ public class UiClass {
 			appController.viewAllEmployee();
 			break;
 
+		case 3:
+			System.out.println("enter id");
+			int getById = scanner.nextInt();
+			appController.getEmpById(getById);
+			break;
+			
+		case 4:
+			System.out.println("enter id");
+			int delById = scanner.nextInt();
+			appController.deleteEmp(delById);
+			System.out.println("deleted");
+			break;
+			
 		default:
 			System.out.println("invalid");
 			break;
 		}
 		System.out.println("executed");
+		System.out.println("Do you want to continue? (y/n)");
+		String choice = scanner.next();
+		if(choice == "y") 
+			acceptData();
+		else
+			System.out.println("exited");
+		
 	}
 }

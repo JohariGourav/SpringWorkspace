@@ -5,22 +5,22 @@ import com.cg.servicelayer.EmployeeService;
 
 public class AppController {
 
-	private EmployeeService service = new EmployeeService();
+	private EmployeeService employeeService;
 
 	public void addEmployee(Employee emp) {
-		service.addEmployee(emp);
+		employeeService.addEmployee(emp);
 	}
 
-	public void deleteEmp(String empName) {
-		service.deleteEmp(empName);
+	public void deleteEmp(int empId) {
+		employeeService.deleteEmp(empId);
 	}
 
 	public void viewAllEmployee() {
-		service.viewAllEmployee();
+		employeeService.viewAllEmployee();
 	}
 
-	public void getEmpById() {
-		service.getEmpById();
+	public void getEmpById(int empId) {
+		employeeService.getEmpById(empId);
 	}
 
 }

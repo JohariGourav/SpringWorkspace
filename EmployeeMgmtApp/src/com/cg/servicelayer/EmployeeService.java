@@ -5,22 +5,22 @@ import com.cg.employeeinterface.Employee;
 
 public class EmployeeService {
 	
-	EmployeeDao dao = new EmployeeDao();
+	EmployeeDao employeeDao;
 	
 	public void addEmployee(Employee emp ) {
-		dao.addEmployee(emp);
+		employeeDao.addEmployee(emp);
 	}
 
-	public void deleteEmp(String empName) {
-		dao.deleteEmp(empName);
+	public void deleteEmp(int empId) {
+		employeeDao.deleteEmp(empId);
 	}
 
 	public void viewAllEmployee() {
-		dao.viewAllEmployee();
+		employeeDao.viewAllEmployee();
 	}
 
-	public void getEmpById() {
-		dao.getEmpById();
+	public void getEmpById(int empId) {
+		employeeDao.getEmpById(empId);
 	}
 
 }
