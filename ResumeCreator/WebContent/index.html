@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+		<form action="ServletResume" method="get">
+		Photo:      <input type="file"/><br/></br>
+		First Name: <input type="text" name="firstName"/></br></br>
+		Last Name:  <input type="text" name="lastName"/></br></br>
+		Gender:    <input type="radio" name="Gender"/>Male
+				   <input type="radio" name="Gender"/>Female</br></br>
+		Highest Qualification: <select>
+				<option value="Under Graduate" name="highestQualification">Under Graduate</option>
+				<option value="Graduate" name="highestQualification">Graduate</option>
+				<option value="Post Graduate">Post Graduate</option>
+				<option value="PHD" name="highestQualification">PHD</option>
+			</select></br></br>
+		Date Of Birth: <input type="date" name="date"></br></br>
+		Hobbies: <textarea rows="5" cols="20" name="hobbies"></textarea></br></br>
+		Address: <textarea rows="5" cols="20" name="address"></textarea></br></br></br>
+		
+		Skills: <input type="checkbox" value="C" name="skills">C
+				<input type="checkbox" value="C++" name="skills">C++
+				<input type="checkbox" value="Java" name="skills">Java
+				<input type="checkbox" value="Python" name="skills">Python</br></br>
+		E-mail: <input type="email" name="email"/></br></br>
+		Web-site: <input type="url" name="website"> </br></br> 	
+		Contact Number: <input type="tel" name="Telephone"></br></br>
+		Description: <textarea rows="5" cols="20" name="desc"></textarea></br></br>
+		<button type="reset">Clear</button>
+		<button type="submit">Submit</button> 
+	
+		
+		</form>
+</body>
+</html>
