@@ -5,7 +5,7 @@ import com.cg.servicelayer.EmployeeService;
 
 public class AppController {
 
-	private EmployeeService employeeService;
+	private EmployeeService employeeService = new EmployeeService();
 
 	public void addEmployee(Employee emp) {
 		employeeService.addEmployee(emp);
@@ -19,8 +19,8 @@ public class AppController {
 		employeeService.viewAllEmployee();
 	}
 
-	public void getEmpById(int empId) {
-		employeeService.getEmpById(empId);
+	public Employee getEmpById(int empId) {
+		return employeeService.getEmpById(empId);
 	}
 
 }

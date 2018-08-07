@@ -4,10 +4,14 @@ import com.cg.datalayer.EmployeeDao;
 import com.cg.employeeinterface.Employee;
 
 public class EmployeeService {
-	
-	EmployeeDao employeeDao;
-	
-	public void addEmployee(Employee emp ) {
+
+	EmployeeDao employeeDao = new EmployeeDao();
+
+	public void setEmployeeDao(EmployeeDao employeeDao) {
+		this.employeeDao = employeeDao;
+	}
+
+	public void addEmployee(Employee emp) {
 		employeeDao.addEmployee(emp);
 	}
 
@@ -19,8 +23,8 @@ public class EmployeeService {
 		employeeDao.viewAllEmployee();
 	}
 
-	public void getEmpById(int empId) {
-		employeeDao.getEmpById(empId);
+	public Employee getEmpById(int empId) {
+		return employeeDao.getEmpById(empId);
 	}
 
 }

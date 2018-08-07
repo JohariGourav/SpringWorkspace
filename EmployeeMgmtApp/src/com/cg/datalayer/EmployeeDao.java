@@ -1,5 +1,7 @@
 package com.cg.datalayer;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -49,9 +51,9 @@ public class EmployeeDao {
 	public Employee getEmpById(int id ) {
 		//list.contains(null);
 		Set<Entry< Integer, Employee>> set = employeeMap.entrySet();
-		for( Entry e: set ) {
+		for( Entry<?, ?> e: set ) {
 			Predicate<Employee> getById = Employee -> e.getKey().equals(id);
-			return (Employee) e.getValue();
+			return  (Employee) e.getValue();
 		}
 		return null;
 	}

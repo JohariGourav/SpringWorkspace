@@ -2,23 +2,16 @@ package com.cg.employeeinterface;
 
 public class Employee {
 
-	private int id;
+	//private int id;
 	private String name;
 	private int salary;
 	
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + "]";
+		return "Employee [ name=" + name + ", salary=" + salary + "]";
 	}
 
 	//Getters Setters
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
