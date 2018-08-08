@@ -16,8 +16,16 @@
 %>
 <h1><marquee>Resume</marquee></h1></br>
  	First Name: <%= name %></br>
+ 
+ 
  	Last Name:	<%= resume.getLastName() %></br>
+ 	Gender: <%= resume.getGender() %></br>
+ 	Highest Qualification: <%= resume.getHighestQualification() %>
+ 	Date of Birth: <%= resume.getDob() %>
+ 	Hobbies: <%= resume.getHobbies() %>
+ 	
  	Address:	<%= resume.getAddress() %></br>
+ 	Skills: <%= request.getParameterValues("skills") %>
  
  </body>
 </html>

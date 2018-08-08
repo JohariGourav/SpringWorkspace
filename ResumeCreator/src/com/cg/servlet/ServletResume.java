@@ -30,7 +30,7 @@ public class ServletResume extends HttpServlet {
 				 request.getParameter("address"), request.getParameterValues("skills"),
 				 request.getParameter("email"), request.getParameter("website"),
 				 request.getParameter("Telephone"), request.getParameter("desc"));
-		// System.out.println("inside servlet:" +resume);
+		System.out.println("inside servlet:" +resume.getSkills());
 		 request.setAttribute("ServletResume", resume);
 		RequestDispatcher rd = request.getRequestDispatcher("index2.jsp");
 		rd.forward(request, response);
