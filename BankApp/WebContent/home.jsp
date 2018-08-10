@@ -6,13 +6,15 @@
 <meta charset="ISO-8859-1">
 <title>Bank App</title>
 </head>
-<body>
-	<a href="ServletBank/addNewAccount">Add New Account</a></br/>
-	<a href="ServletBank/viewAllAccounts">View All Accounts</a></br/>
-	<a href="ServletBank/search">Search</a></br/>
-	<a href="ServletBank/withdraw">Withdraw</a></br/>
-	<a href="ServletBank/Deposit">Deposit</a></br/>
-	<a href="ServletBank/fundTransfer">Fund Transfer</a></br/>
-	
+<body align="center">
+	<h1>Money Money Bank</h1>
+	<div>
+	<a href="addNewAccount.bankApp">Add New Account</a></br/>
+	<a href="viewAllAccounts.bankApp">View All Accounts</a></br/>
+	<a href="search.bankApp">Search</a></br/>
+	<a href="withdraw.bankApp">Withdraw</a></br/>
+	<a href="deposit.bankApp">Deposit</a></br/>
+	<a href="fundTransfer.bankApp">Fund Transfer</a></br/>
+	</div>
 </body>
 </html>
