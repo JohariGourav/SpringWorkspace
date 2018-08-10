@@ -14,13 +14,13 @@
 		</br>
 		<div>
 			<h3>Books Catalogue</h3>
-			<h3 align="right"><a href="viewCart.webApp">Cart &nbsp;</a></h3>
+			<h3 align="right"><a href="viewCart.webApp">Cart &nbsp; ${sessionScope.cartItems}</a></h3>
 		</div>
-		<table>
+		<table border="10">
 			<tr>
-				<th>Book ID</th>
-				<th>Book Name</th>
-				<th>Book Price</th>
+				<th align="left">Book ID</th>
+				<th align="left">Book Name</th>
+				<th align="left">Book Price</th>
 			</tr>
 			<jstl:forEach var="book" items="${requestScope.books }">
 				<tr>

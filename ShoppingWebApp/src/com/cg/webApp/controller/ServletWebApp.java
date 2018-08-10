@@ -9,8 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import com.cg.webApp.pojo.Book;
+import com.cg.webApp.service.WebAppService;
 import com.cg.webApp.service.WebAppServiceImpl;
 
 import sun.rmi.server.Dispatcher;
@@ -19,8 +22,8 @@ import sun.rmi.server.Dispatcher;
 public class ServletWebApp extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private WebAppServiceImpl service = new WebAppServiceImpl();
-
+	private WebAppService service = new WebAppServiceImpl();
+	int totalPrice = 0, cartItems = 0;
 	public ServletWebApp() {
 
 	}
@@ -29,6 +32,7 @@ public class ServletWebApp extends HttpServlet {
 			throws ServletException, IOException {
 		RequestDispatcher rd;
 		String action = request.getServletPath();
+		HttpSession session = request.getSession();
 		System.out.println(action);
 		switch (action) {
 		case "/catalogue.webApp":
@@ -40,9 +44,12 @@ public class ServletWebApp extends HttpServlet {
 			break;
 			
 		case "/addToCart.webApp": 
-			
-			service.addToCart(Integer.parseInt(request.getParameter("bookId")));
+			cartItems++;
+			totalPrice += service.addToCart(Integer.parseInt(request.getParameter("bookId")));
 			System.out.println(Integer.parseInt(request.getParameter("bookId")));
+			session = request.getSession();
+			session.setAttribute("totalPrice", totalPrice);
+			session.setAttribute("cartItems", cartItems);
 			response.sendRedirect("catalogue.webApp");
 			break;
 		
@@ -55,9 +62,12 @@ public class ServletWebApp extends HttpServlet {
 			break;
 		
 		case "/removeBook.webApp" :
-			
-			service.removeFromCart(Integer.parseInt(request.getParameter("cartBookId")));
+			cartItems--;
+			totalPrice -= service.removeFromCart(Integer.parseInt(request.getParameter("cartBookId")));
 			System.out.println(Integer.parseInt(request.getParameter("cartBookId")));
+			session = request.getSession();
+			session.setAttribute("totalPrice", totalPrice);
+			session.setAttribute("cartItems", cartItems);
 			response.sendRedirect("viewCart.webApp");
 		}
 

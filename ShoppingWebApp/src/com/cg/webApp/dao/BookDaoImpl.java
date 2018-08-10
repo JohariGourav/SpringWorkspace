@@ -6,7 +6,7 @@ import java.util.Map;
 
 import com.cg.webApp.pojo.Book;
 
-public class BookDaoImpl {
+public class BookDaoImpl implements BookDao {
 
 	private Map<Integer, Book> bookDb = new HashMap<>();
 	
@@ -25,21 +25,32 @@ public class BookDaoImpl {
 		bookDb.put(110, new Book("Born To Fly", 459, 110));
 	}
 
+	
+	@Override
 	public Collection<Book> displayAllBooks() {
 		addBooks();
 		return bookDb.values();
 	}
 	
-	public void addToCart (int bookId) {
+	
+	@Override
+	public int addToCart (int bookId) {
 		
 		cart.put(bookId, bookDb.get(bookId));
 		System.out.println(cart.values());
+		return cart.get(bookId).getBookPrice();
 	}
 	
-	public void removeFromCart (int bookId) {
+	
+	@Override
+	public int removeFromCart (int bookId) {
+		int price = cart.get(bookId).getBookPrice();
 		cart.remove(bookId);
+		return price;
 	}
 	
+	
+	@Override
 	public Collection<Book> viewCart() {
 		return cart.values();
 	}

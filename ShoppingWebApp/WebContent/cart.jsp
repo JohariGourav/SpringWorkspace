@@ -14,21 +14,21 @@
 		<div>
 
 			<h3 align="right">
-				<a href="viewCart.webApp">Cart &nbsp;</a>
+				<a href="viewCart.webApp">Cart &nbsp; ${sessionScope.cartItems}</a>
 			</h3>
 		</div>
-		<table>
+		<table border="10" >
 			<tr>
-				<th>Book ID</th>
-				<th>Book Name</th>
-				<th>Book Price</th>
+				<th align="left">Book ID</th>
+				<th align="left">Book Name</th>
+				<th align="left">Book Price</th>
 			</tr>
 
-			<jstl:forEach var="cartbook" items="${requestScope.cartBooks}">
+			<jstl:forEach var="cartBook" items="${requestScope.cartBooks}">
 				<tr>
-					<td>${cartbook.bookId}</td>
-					<td>${cartbook.bookName}</td>
-					<td>${cartbook.bookPrice}</td>
+					<td>${cartBook.bookId}</td>
+					<td>${cartBook.bookName}</td>
+					<td>${cartBook.bookPrice}</td>
 					<td><a href="removeBook.webApp?cartBookId=${cartBook.bookId}">Remove
 							From Cart</a></td>
 
@@ -36,6 +36,8 @@
 			</jstl:forEach>
 
 		</table>
+			<div align="right">Total Price: Rs. ${sessionScope.totalPrice}
+			</div>
 	</div>
 </body>
 </html>
