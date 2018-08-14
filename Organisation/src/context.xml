@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- <bean id="provider" class="com.cg.provider.HWMessageProvider">
+
+	</bean> -->
+
+	<!-- <bean id="renderer" class="com.cg.renderer.ConsoleMessageRenderer"> 
+		<property name="messageProvider" ref="provider"/> </bean> -->
+
+	<!-- <bean id="renderer" class="com.cg.renderer.PDFMessageRenderer"
+		scope="singleton" lazy-init="true" p:messageProvider-ref="provider">
+p:address-ref="address"
+p:globalPresence="Japan" p:boardMembers="Veer Singh"
+		p:projectManager="Ravi Kumar" p:established="10-10-2010"
+	</bean> -->
+	<bean id="organisation"
+		class="com.cg.pojo.organisation.OrganisationImpl" p:name="Capgemini"
+		 p:marketValue="15000000"
+		 p:employeeCount="2000"
+		>
+
+		
+	</bean>
+</beans>
