@@ -1,12 +1,10 @@
 package com.demoRest.controller;
 
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-
-import javax.swing.plaf.BorderUIResource.LineBorderUIResource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
@@ -16,22 +14,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
+import com.demoRest.pojo.Customer;
 import com.demoRest.pojo.Employee;
 import com.demoRest.service.ServiceCustomer;
 import com.demoRest.service.ServiceEmployee;
 
-@RestController
-public class Rest {
-
+public class ControllerCustomer {
 	@Autowired
-	ServiceEmployee service;
+	ServiceCustomer service;
 
 	// Add New Employee
 	@RequestMapping(value = "/addNewEmployee", method = RequestMethod.POST)
-	public void addNewEmployee(@RequestBody Employee employee) {
-		service.addNewEmployee(employee);
+	public void addNewEmployee(@RequestBody Customer customer) {
+		service.addNewCustomer(customer);
 	}
 
 	// View All Employees
@@ -86,4 +82,6 @@ public class Rest {
 	public void deleteEmpById(@PathVariable int id) {
 		service.deleteEmpById(id);
 	}
+}
+
 }
